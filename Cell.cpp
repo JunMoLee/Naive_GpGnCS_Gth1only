@@ -475,7 +475,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		
 		posneg=1;
 		if(param->ReverseUpdate && (iteration % param->newUpdateRate == param->newUpdateRate-1)){
-		if(refGp < param->Gth1)
+		if(refGn > param->Gth1)
 		{
 		GpGnCell = false;
 		deltaWeightNormalized = -totalcondrange/ncondrange*deltaWeightNormalized/(maxWeight-minWeight);
@@ -569,7 +569,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 	} else if (deltaWeightNormalized < 0) {	// LTD weight update
 		posneg=-1;
 		if(param->ReverseUpdate && (iteration % param->newUpdateRate == param->newUpdateRate-1)){
-			if(refGn < param->Gth1){
+			if(refGp > param->Gth1){
 						GpGnCell = true;
 						deltaWeightNormalized = totalcondrange/pcondrange*deltaWeightNormalized/(maxWeight-minWeight);
 						deltaWeightNormalized = truncate(deltaWeightNormalized, maxNumLevelpLTD);
