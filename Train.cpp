@@ -185,7 +185,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 			while(looptrue){
 			
 			for (int k=0; k<param->nInput; k++) {
-				if (Input[i][k]>1 || Input[i][k]<0 ||isinf(Input[i][k])) error=1;
+				if (Input[i][k]>1 || Input[i][k]<0 ||isinf(Input[i][k])|| isnan(Input[i][k])) error=1;
 				
 			}
 				if (error==1){
