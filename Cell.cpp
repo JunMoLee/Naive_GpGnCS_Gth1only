@@ -488,10 +488,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 		realpulse = - numPulse*1.00/maxNumLevelnLTD*10.0 ;
-					if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+					
 			numPulse =0;
 
 		
@@ -523,10 +520,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = numPulse*1.00/maxNumLevelnLTD*10.0  ;
-					if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+			
 		if (numPulse > maxNumLevelnLTD) {
 			numPulse = maxNumLevelnLTD;
 			}
@@ -558,10 +552,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = numPulse*1.00/ maxNumLevelpLTP*10.0 ;
-					if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+					
 		if (numPulse > maxNumLevelpLTP) {
 			numPulse = maxNumLevelpLTP;
 		}
@@ -593,10 +584,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 				realpulse = numPulse *1.00/ maxNumLevelpLTD*10.0;
-						if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+						
 				numPulse =0;
 		
 			}
@@ -619,10 +607,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 				realpulse = - numPulse*1.00/ maxNumLevelpLTD*10.0  ;
-						if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+				
 				if (numPulse > maxNumLevelpLTD) {
 					numPulse = maxNumLevelpLTD;
 				}
@@ -652,10 +637,7 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = - numPulse*1.00/maxNumLevelnLTP*10.0;
-					if (realpulse > 100000)
-				{
-					realpulse=0;
-				}
+				
 			if (numPulse > maxNumLevelnLTP) {
 				numPulse = maxNumLevelnLTP;
 			} 
@@ -767,6 +749,10 @@ else if ((conductanceGpPrev - ( param->Gth1))>0 && (conductanceGnPrev - (param->
 	if( (conductanceGpPrev - conductanceNewGp)*(conductanceGpPrev - conductanceNewGp) > (conductanceGnPrev - conductanceNewGn) * (conductanceGnPrev - conductanceNewGn))
 	{
 	double m1 = ( conductanceNewGp - conductanceGpPrev );
+			if (realpulse > 100000 || realpulse < -100000)
+				{
+					realpulse=0;
+				}
 	double m2 = realpulse;
 	if (posneg==1) {pospulsecount += realpulse; pospulsesum += m1;}
 	else if (posneg==-1) {negpulsecount += realpulse; negpulsesum += m1;}
@@ -798,6 +784,10 @@ else if ((conductanceGpPrev - ( param->Gth1))>0 && (conductanceGnPrev - (param->
 	{
 		
 	double m1 = -( conductanceNewGn - conductanceGnPrev );
+			if (realpulse > 100000 || realpulse < -100000)
+				{
+					realpulse=0;
+				}
 	double m2 = realpulse;
 	if (posneg==1) {pospulsecount += realpulse; pospulsesum += m1;}
 	else if (posneg==-1) {negpulsecount += realpulse; negpulsesum += m1;}
