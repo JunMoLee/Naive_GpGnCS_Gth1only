@@ -488,6 +488,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 		realpulse = - numPulse*1.00/maxNumLevelnLTD*10.0 ;
+					if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 			numPulse =0;
 
 		
@@ -519,6 +523,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = numPulse*1.00/maxNumLevelnLTD*10.0  ;
+					if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 		if (numPulse > maxNumLevelnLTD) {
 			numPulse = maxNumLevelnLTD;
 			}
@@ -550,6 +558,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = numPulse*1.00/ maxNumLevelpLTP*10.0 ;
+					if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 		if (numPulse > maxNumLevelpLTP) {
 			numPulse = maxNumLevelpLTP;
 		}
@@ -581,6 +593,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 				realpulse = numPulse *1.00/ maxNumLevelpLTD*10.0;
+						if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 				numPulse =0;
 		
 			}
@@ -603,6 +619,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 				realpulse = - numPulse*1.00/ maxNumLevelpLTD*10.0  ;
+						if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 				if (numPulse > maxNumLevelpLTD) {
 					numPulse = maxNumLevelpLTD;
 				}
@@ -632,6 +652,10 @@ void RealDevice::Write(int iteration, double deltaWeightNormalized, double weigh
 		}
 		*/
 			realpulse = - numPulse*1.00/maxNumLevelnLTP*10.0;
+					if (realpulse > 100000)
+				{
+					realpulse=0;
+				}
 			if (numPulse > maxNumLevelnLTP) {
 				numPulse = maxNumLevelnLTP;
 			} 
