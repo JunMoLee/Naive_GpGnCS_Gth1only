@@ -1476,7 +1476,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 				if(loc0noiseHO>1000000000 ||loc1noiseHO>1000000000 ||loc2noiseHO>1000000000 ||loc3noiseHO>1000000000 || isinf(loc0noiseHO) ||isinf(loc1noiseHO) ||isinf(loc2noiseHO) ||isinf(loc3noiseHO))
 				{	while (1){
 					printf("recordidx: %d /n", int(iteration / param ->RecordPeriod));
-					for (int jjj = 0; jjjj < param->nOutput; jjj++) {
+					for (int jjj = 0; jjj < param->nOutput; jjj++) {
 				
 
 						for (int kkk = 0; kkk < param->nHide; kkk++) {
