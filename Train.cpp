@@ -1353,7 +1353,8 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 						for (int kkk = 0; kkk < param->nInput; kkk++) {
 						printf("noisypulse: %.5f, realpulse: %.5f, noise: %.5f \n",static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->noisypulse,static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->realpulse, static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->noise);
 						printf("conductanceGp: %.5f, conductanceGn: %.5f \n",static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->conductanceGp,static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->conductanceGn);
-						printf("s1[%d]: %.5f, dInput[%d]: %.5f, Input[%d]: %.5f conductanceprev: %.5f \n", jjj , s1[jjj] , kkk ,dInput[i][kkk], kkk, Input[i][kkk],static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->conductancePrev );}
+						printf("s1[%d]: %.5f, dInput[%d]: %d \n", jjj , s1[jjj] , kkk ,dInput[i][kkk]);
+						printf("Input[%d]: %.5f conductanceprev: %.5f \n", kkk, Input[i][kkk],static_cast<RealDevice*>(arrayIH->cell[jjj][kkk])->conductancePrev );}
 					
 					}
 				}
